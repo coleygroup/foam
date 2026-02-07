@@ -1,0 +1,49 @@
+seed: 42
+num-workers: 64
+device: cuda:0
+gpu-workers: 48
+batch-size: 32
+wandb-mode: offline
+wandb-project: foam-diffms-msg
+
+gen-model-ckpt: models/msg/dag_gen.ckpt
+inten-model-ckpt: models/msg/dag_inten_cosine.ckpt
+ignore-precursor-peak: True
+use-multi-node: False
+max-nodes: 1
+
+oracle-type: Cos_SA_ 
+criteria: entropy
+multiobj: True
+eval-names: ['NDSBestMol', 'TopNDSScore', 'NDSFronts', 'InchiKeyMatch']
+# spec-id: MassSpecGymID0185084
+spec-lib-dir: data/spec-datasets/msg/spec_files.hdf5
+spec-lib-label: data/spec-datasets/msg/labels_withev_validinst.tsv
+
+# pubchem:
+seed-lib-dir: data/candidates/pubchem/pubchem_formulae_inchikey.hdf5
+full-seed-file: data/candidates/pubchem/pubchem_formula_map.p
+extra-seeds: data/candidates/msg/msgid_to_diffms_inchis_dict.h5
+
+max-seed-sim: 1.0
+
+top-k: [1, 5, 10]
+
+max-calls: 1500
+keep-population: 20000 # to cover seeds that might be queried. 
+population-size: 200
+offspring-size: 600
+mutation_rate: 0.20
+num-islands: 1
+threshold: 0.0
+starting-seed-size: -1
+
+selection-sorting-type: cand_crowding
+parent-tiebreak: cand_crowding
+truncate: True
+# use-clustered-evs 
+# mutate-parents
+# use-iceberg-spectra
+
+save-dir: results/msg_pubchem_diffms_1500calls
+tags: ['msg-model', 'pubchem-seeds', 'diffms-seeds']

@@ -1,0 +1,12 @@
+jpype1
+scikit-learn
+dgllife
+pathos
+hyperopt
+setuptools==59.5.0
+git+https://github.com/ray-project/ray_lightning#ray_lightning
+ray[air]
+wandb
+myopic-MCES
+plotly
+wandb-osh

@@ -1,0 +1,1 @@
+python3 src/foam/opt_graph_ga_fc/run_hyperopt_ga_fc.py --wandb disable --num-workers 16 --save-dir results/2022_11_13_ga_test_hyperopt --oracle-names Tani_pindolol --eval-names BestMol TopScore TopIsoScore --top-k 1 5 10 20  --max-calls 100 --keep-population 100

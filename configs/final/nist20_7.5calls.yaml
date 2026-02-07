@@ -1,0 +1,47 @@
+seed: 42
+num-workers: 64
+gpu-workers: 8
+device: cuda:0
+batch-size: 64
+wandb-mode: offline
+wandb-project: foam_nist20_7.5kcalls
+
+gen-model-ckpt: data/nist20/dag_gen_nist20/best.ckpt
+inten-model-ckpt: data/nist20/dag_inten_nist20/best.ckpt
+ignore-precursor-peak: True
+use-multi-node: False
+max-nodes: 1
+ 
+oracle-type: Cos_SA_ # need to rename
+criteria: entropy
+multiobj: True
+eval-names: ['NDSBestMol', 'TopNDSScore', 'NDSParetoRanking', 'NDSFronts', 'InchiKeyMatch']
+
+spec-lib-dir: data/spec-datasets/nist20/spec_files.hdf5
+spec-lib-label: data/spec-datasets/nist20/labels.tsv
+seed-lib-dir: data/candidates/pubchem/pubchem_formulae_inchikey.hdf5
+full-seed-file: data/candidates/pubchem/pubchem_formula_map.p
+max-seed-sim: 1.0
+
+
+top-k: [1, 5, 10]
+
+max-calls: 7500
+keep-population: 40000
+population-size: 200
+offspring-size: 600
+num-islands: 1
+threshold: 0.0
+starting-seed-size: 600 
+
+selection-sorting-type: cand_crowding
+parent-tiebreak: cand_crowding
+truncate: True
+denoise_specs: False
+
+# use-clustered-evs 
+# mutate-parents
+# use-iceberg-spectra
+
+save-dir: results/nist20_7.5k_calls
+tags: ['nist20', '7500calls']

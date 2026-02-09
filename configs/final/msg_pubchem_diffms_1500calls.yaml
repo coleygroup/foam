@@ -10,7 +10,7 @@ gen-model-ckpt: models/msg/dag_gen.ckpt
 inten-model-ckpt: models/msg/dag_inten_cosine.ckpt
 ignore-precursor-peak: True
 use-multi-node: False
-max-nodes: 1
+max-nodes: 100
 
 oracle-type: Cos_SA_ 
 criteria: entropy

@@ -56,7 +56,7 @@ foam/
 - Git
 
 ### Option 1: Using mamba + pip
-These are the installation instructions that were used to generate the results in the paper. 
+
 ```bash
 # 1. Set up the ms-pred environment
 cd ms-pred
@@ -70,15 +70,19 @@ pip install -r requirements.txt
 python setup.py develop
 ```
 
-
-### Option 2: Using uv (beta, fast!)
+### Option 2: Using uv (faster, recommended!)
+These use updated dependencies. 
 ```bash
 # 1. Create and activate a virtual environment
+git clone https://github.com/coleygroup/foam.git
+cd foam
 uv venv --python 3.10 ms-gen-foam
 source ms-gen-foam/bin/activate
 
 # 2. Install ms-pred
 cd .. && git clone https://github.com/coleygroup/ms-pred.git && cd ms-pred
+# for up to date installation: use updated dependencies on the branch fix-deps.
+git checkout fix-deps
 uv pip install -e .
 
 # 3. Install FOAM
@@ -90,6 +94,7 @@ uv pip install -e ".[cpu]"
 # For GPU (Linux with CUDA 12.1):
 uv pip install -e ".[cuda]"
 ```
+
 
 ### Typical Install Time
 

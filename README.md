@@ -103,7 +103,7 @@ Installation takes approximately **10-20 minutes** on a normal desktop computer 
 ## Downloading models and data
 
 ### Models
-ICEBERG (cite) is used for forward spectral simulation; given a SMILES representation of a molecule alongside instrumental metadata such as specified adducts, collision energy, and instrument type, a spectrum can be generated.
+[ICEBERG](https://www.biorxiv.org/content/10.1101/2025.05.28.656653v2) is used for forward spectral simulation; given a SMILES representation of a molecule alongside instrumental metadata such as specified adducts, collision energy, and instrument type, a spectrum can be generated.
 
 Model weights: 
 * MassSpecGym: weights available here: https://zenodo.org/uploads/18502041

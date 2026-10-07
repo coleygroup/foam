@@ -2,7 +2,7 @@
 
 This repository complements the paper, "[Generative structural elucidation from mass spectra as an iterative optimization problem](https://arxiv.org/abs/2602.07709)". 
 
-FOAM is a method for _de novo_ structural elucidation from tandem mass spectra that frames the problem as iterative optimization. Given an experimental spectrum and molecular formula, FOAM uses a formula-constrained graph genetic algorithm to propose and refine candidate structures, scoring them with ICEBERG (a learned spectral simulator) to maximize predicted spectral similarity to the observed spectrum. As a spectrum-conditioned generative method that can also accept any number of seed structures, FOAM supports the refinement of structures from any sourcs---virtual libraries, generative models, or other domain-specific tools.
+FOAM is a method for _de novo_ structural elucidation from tandem mass spectra that frames the problem as iterative optimization. Given an experimental spectrum and molecular formula, FOAM uses a formula-constrained graph genetic algorithm to propose and refine candidate structures, scoring them with ICEBERG (a learned spectral simulator) to maximize predicted spectral similarity to the observed spectrum. As a spectrum-conditioned generative method that can also accept any number of seed structures, FOAM supports the refinement of structures from any source---virtual libraries, generative models, or other domain-specific tools.
 
 
 ## System Requirements
